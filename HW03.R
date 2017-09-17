@@ -14,15 +14,13 @@ gg2 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, xmax = max(Sepal.Leng
   geom_point(alpha = 0.6) +
   geom_text(label = iris$Species, nudge_x = 0.25, nudge_y = 0.25, check_overlap = TRUE) +
   theme(legend.position = "none")  #把legend拿掉
-gg2
-?aes
+
 #圖3
 data <- LifeCycleSavings
 gg3 <- ggplot(data, aes(x = pop75, y= sr, fill = dpi, xmax = max(pop75) * 1.2, ymax = max(sr) * 1.2)) +
   geom_label(label = rownames(data), color = "white", size = 2) +  #將資料點用標籤形式表達
   geom_smooth(method = "lm", color = "red", se = FALSE) +
   theme(legend.position = c(1, 1), legend.justification = c(1, 1))  #將legend放到圖里的右上角
-gg3
 
 #圖4
 library(tidyverse)
